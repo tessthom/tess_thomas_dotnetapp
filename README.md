@@ -40,8 +40,12 @@
 ### To do:
 
 - [x] Build directory/file structure
-- [] Configure Routing
-- [] Code Razor Layouts
-- [] Make navbar and active links
-- [] Make Help Area nested layout
-- [] Implement Controllers and Views
+- [ ] Configure Routing
+- [ ] Set up FAQ data
+- [ ] Code Razor Layouts
+- [ ] Make navbar and active links
+- [ ] Make Help Area nested layout
+- [ ] Implement Controllers and Views
+- [ ] Create a search bar in FAQ section with JS for autocomplete functionality
+- [ ] Use loading indicators for content that reqs additional load time
+- [ ] Provide visual feedback for interactions like form submissions or content updates
