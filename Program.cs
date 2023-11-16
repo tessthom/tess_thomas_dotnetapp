@@ -20,13 +20,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// app.MapAreaControllerRoute(
-//     name: "helpArea",
-//     areaName: "Help",
-//     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+// This adds the Help area to the route table
+app.MapAreaControllerRoute(
+    name: "helpArea",
+    areaName: "Help",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
-// app.MapControllerRoute(
-//     name: "default",
-//     pattern: "{controller=Home}/{action=Index}/{id?}");
+// This adds the default route
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

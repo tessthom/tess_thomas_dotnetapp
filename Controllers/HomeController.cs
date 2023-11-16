@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace tess_thomas_dotnetapp.Controllers;
 
-[Route("")] // This is the default route, so we can omit it
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -13,8 +12,15 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    // Attribute based routing
+    [Route("topic/{topic}/category/{category}")] // Matches /topic/anything/category/anything
+    [Route("category/{category}")] // Matches /category/anything
+    [Route("topic/{topic}")] // Matches /topic/anything
+    [Route("")] // This is the default route
     public IActionResult Index()
     {
+        // logic for the home page goes here
+        
         return View();
     }
 
