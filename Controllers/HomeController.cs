@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using tess_thomas_dotnetapp.Models;
 
 namespace tess_thomas_dotnetapp.Controllers;
 
+[Route("")] // This is the default route, so we can omit it
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -18,14 +18,16 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+    // Should not need these actions for the app
+    // Deleted related boilerplate files: Views/Home/Privacy.cshtml, Views/Shared/Error.cshtml, Models/ErrorViewModel.cs
+    // public IActionResult Privacy()
+    // {
+    //     return View();
+    // }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+    // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    // public IActionResult Error()
+    // {
+    //     return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    // }
 }

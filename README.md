@@ -6,7 +6,7 @@
 
 - No model classes needed
 - Use Razor layout for main HTML elements
-- Layout should have section within <header> element that's required
+- Layout should have section within header element that's required
 - Use nested Razor layout in Help area
 - Contact view should get a collection of data from Home controller and display it to user
 - Help area should have Home and Tutorial pages
