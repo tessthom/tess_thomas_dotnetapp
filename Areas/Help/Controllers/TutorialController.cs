@@ -8,11 +8,9 @@ public class TutorialController : Controller
     switch (id)
     {
       case 1:
-        return View("Page1");
       case 2:
-        return View("Page2");
       case 3:
-        return View("Page3");
+        return View("Page" + id, id);
       default:
         return RedirectToAction("Index", "Home");
     }

@@ -3,7 +3,16 @@
 }
 
 @section Header {
-  @RenderSection("Header", required: true)
+  <h1>Help Page</h1>
 }
+
+<nav class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" asp-area="Help" asp-controller="Home" asp-action="Index">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" asp-area="Help" asp-controller="Tutorial" asp-action="Index" asp-route-id="1">Tutorial</a>
+  </li>
+</nav>
 
 @RenderBody()
