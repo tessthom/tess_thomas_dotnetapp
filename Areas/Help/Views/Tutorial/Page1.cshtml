@@ -1,3 +1,8 @@
 @model int
 
 <h2>Tutorial - Page @Model</h2>
+
+<p>tutorial 1 content</p>
+
+<a asp-asp-controller="Tutorial" asp-action="PrevTutorial" asp-route-id="@Model" class="btn btn-primary">Prev</a>
+<a asp-asp-controller="Tutorial" asp-action="NextTutorial" asp-route-id="@Model" class="btn btn-primary">Next</a>

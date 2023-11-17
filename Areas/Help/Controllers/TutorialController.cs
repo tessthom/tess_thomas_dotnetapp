@@ -15,4 +15,22 @@ public class TutorialController : Controller
         return RedirectToAction("Index", "Home", new { area = "Help"});
     }
   }
+
+  public IActionResult PrevTutorial(int id)
+  {
+    if (id > 1)
+    {
+      id--;
+    }
+    return RedirectToAction("Index", new { id = id });
+  }
+
+  public IActionResult NextTutorial(int id)
+  {
+    if (id < 3)
+    {
+      id++;
+    }
+    return RedirectToAction("Index", new { id = id });
+  }
 }
