@@ -12,7 +12,7 @@ public class TutorialController : Controller
       case 3:
         return View("Page" + id, id);
       default:
-        return RedirectToAction("Index", "Home");
+        return RedirectToAction("Index", "Home", new { area = "Help"});
     }
   }
 }

@@ -16,7 +16,7 @@ public class HomeController : Controller
     [Route("category/{category}")] // Matches /category/anything
     [Route("topic/{topic}")] // Matches /topic/anything
     [Route("")] // This is the default route
-    public IActionResult Index()
+    public IActionResult Index(string? topic = null, string? category = null)
     {
         // logic for the home page goes here
         

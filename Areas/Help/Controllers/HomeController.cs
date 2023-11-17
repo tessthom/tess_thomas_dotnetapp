@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 [Area("Help")]
 public class HomeController : Controller
 {
-    public IActionResult Index(string topic = null, string category = null)
+    public IActionResult Index(string? topic = null, string? category = null)
     {
         // Get all FAQs from FaqData.cs
         var faqs = FaqData.AllFaqs;

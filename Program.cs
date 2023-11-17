@@ -24,7 +24,7 @@ app.UseAuthorization();
 app.MapAreaControllerRoute(
     name: "helpArea",
     areaName: "Help",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "Help/{controller=Home}/{action=Index}/{id?}");
 
 // This adds the default route
 app.MapControllerRoute(
