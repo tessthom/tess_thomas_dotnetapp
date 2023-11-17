@@ -40,11 +40,13 @@
 ### To do:
 
 - [x] Build directory/file structure
-- [ ] Configure Routing
+- [x] Configure Routing
 - [ ] Set up FAQ data
 - [ ] Code Razor Layouts
 - [ ] Make navbar and active links
-- [ ] Make Help Area nested layout
+- [x] Make Help Area nested layout
+- [x] Help area tabbed nav
+- [x] Tutorial pages nav buttons
 - [ ] Implement Controllers and Views
 - [ ] Create a search bar in FAQ section with JS for autocomplete functionality
 - [ ] Use loading indicators for content that reqs additional load time
