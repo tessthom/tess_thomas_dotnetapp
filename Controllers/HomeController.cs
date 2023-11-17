@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace tess_thomas_dotnetapp.Controllers;
 
@@ -21,6 +20,16 @@ public class HomeController : Controller
     {
         // logic for the home page goes here
         
+        return View();
+    }
+
+    public IActionResult About()
+    {
+        return View();
+    }
+
+    public IActionResult Contact()
+    {
         return View();
     }
 

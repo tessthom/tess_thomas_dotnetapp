@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/tess_thomas_dotnetapp.props" />
+</Project>
