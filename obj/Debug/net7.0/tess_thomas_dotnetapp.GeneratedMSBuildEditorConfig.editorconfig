@@ -36,6 +36,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSGVscC9WaWV3cy9UdXRvcmlhbC9QYWdlMy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/Areas/Help/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSGVscC9WaWV3cy9fVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/Areas/Help/Views/_VIewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSGVscC9WaWV3cy9fVklld1N0YXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9BYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
