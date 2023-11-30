@@ -5,12 +5,56 @@
       "PackagePath": "staticwebassets/tess_thomas_dotnetapp.bundle.scp.css"
     },
     {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
       "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
     {
       "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/favicon.ico",
       "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/construction-1000.jpg",
+      "PackagePath": "staticwebassets/images/construction-1000.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/construction-1900.jpg",
+      "PackagePath": "staticwebassets/images/construction-1900.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/construction-600.jpg",
+      "PackagePath": "staticwebassets/images/construction-600.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/laptop-1000.jpg",
+      "PackagePath": "staticwebassets/images/laptop-1000.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/laptop-1900.jpg",
+      "PackagePath": "staticwebassets/images/laptop-1900.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/laptop-600.jpg",
+      "PackagePath": "staticwebassets/images/laptop-600.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/scaffolding-1000.jpg",
+      "PackagePath": "staticwebassets/images/scaffolding-1000.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/scaffolding-1900.jpg",
+      "PackagePath": "staticwebassets/images/scaffolding-1900.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/scaffolding-600.jpg",
+      "PackagePath": "staticwebassets/images/scaffolding-600.jpg"
     },
     {
       "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/js/site.js",

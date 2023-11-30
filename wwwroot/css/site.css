@@ -20,3 +20,38 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Reset containers to remove horizontal padding and max-widths */
+.container {
+  /* max-width: none; */
+  padding-left: 0;
+  padding-right: 0;
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* Visual indicator for active nav links */
+.navbar-nav .active > .nav-link {
+  /* font-weight: bold; */
+  border-bottom: 2px solid rgb(33,37,41);
+}
+/* Remove x padding from nav links because it makes the bottom border underline effect too wide */
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Add x padding to nav items to compensate for above removal */
+.navbar-expand-sm .navbar-nav .nav-item {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+/* Remove padding from right side of last nav item */
+.navbar-expand-sm .navbar-nav .nav-item:last-child {
+  padding-right: 0;
+}

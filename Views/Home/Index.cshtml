@@ -3,9 +3,79 @@
 }
 
 @section Header {
-    <h1 class="display-4">Home</h1>
+    <div class="container-fluid">
+        <h1 class="visually-hidden">Home</h1>
+    </div>
 }
 
-<div class="text-center">
-    <p>I am a paragraph tag from the Index.cshtml file inside a div with a class of .text-center</p>
+<div id="myCarousel" class="carousel slide container-fluid" data-bs-ride="true">
+    <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="aspect-ratio aspect-4x3">
+            <img src="/images/scaffolding-1000.jpg" class="d-block w-100 object-fit-cover" alt="">
+        </div>
+      <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0">
+            <h2 class="display-4 fw-bold mb-4">Learn how to set up a .NET app</h2>
+            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-4" href="#" role="button">Tutorials</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+        <div class="aspect-ratio aspect-4x3">
+            <img src="/images/laptop-1000.jpg" class="d-block w-100 object-fit-cover" alt="">
+        </div>
+        <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0"">
+            <h2 class="display-4 fw-bold mb-4">Give feedback about the class</h2>
+            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-4" href="#" role="button">Contact</a>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="aspect-ratio aspect-4x3">
+            <img src="/images/construction-1000.jpg" class="d-block w-100 object-fit-cover" alt="">
+        </div>
+        <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0"">
+            <h2 class="display-4 fw-bold mb-4">Browse common questions about the construction of Core MVC apps</h2>
+            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-4" href="#" role="button">FAQs</a>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+  </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="container-fluid py-5 px-2 px-sm-4">
+    @* cols of text below carousel *@
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="#" alt="FIRST COL IMAGE HERE" class="float-md-end">
+            <h3 class="fw-normal">Configuring Middleware for an HTTP Request Pipeline</h3>
+            <p>
+                The MapControllerRoute() method sets the app's default controller and action. We can pass the arguments `name: "default", pattern: "{controller=Home}/{action=Index}/{id?}"` so that when the app starts, it calls the Index() action method of the Home controller.
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img src="#" alt="SECOND COL IMAGE HERE">
+            <h3 class="fw-normal">URL Best Practice</h3>
+            <p>
+                URLs specify the interface for an app. They should be easy to read, easy to type, and easy to remember. Well designed URLs are good SEO and more likely to be bookmarked by users. Keep them as short as possible while still being descriptive, use keywords to describe page content, and try to create an intuitive hierarchy. 
+            </p>
+        </div>
+        <div class="col-lg-4">
+            <img src="#" alt="SECOND COL IMAGE HERE">
+            <h3 class="fw-normal">Binding Model Properties to HTML Elements</h3>
+            <p>
+                The `asp-for` tag helper is typically used with forms to bind model properties to HTML elements in Razor views. The tag helper generates the `name` and `id` attributes of the HTML element. The `name` attribute is used to bind the element to a model property. The `id` attribute is used to associate the element with a `label` element. 
+            </p>
+        </div>
+    </div>
 </div>
