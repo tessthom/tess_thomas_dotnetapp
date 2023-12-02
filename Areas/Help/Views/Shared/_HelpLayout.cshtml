@@ -3,18 +3,33 @@
 }
 
 @section Header {
-  <div class="container-lg px-0">
+  <div class="container-lg px-4 px-lg-0 py-4 text-center">
     <h1>Help Page</h1>
   </div>
 }
 
-<nav class="nav nav-tabs container-lg px-0">
-  <li class="nav-item">
-    <a class="nav-link" asp-area="Help" asp-controller="Home" asp-action="Index" asp-route-topic="" asp-route-category="">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" asp-area="Help" asp-controller="Tutorial" asp-action="Index" asp-route-id="1">Tutorial</a>
-  </li>
-</nav>
+<div class="container px-lg-3">
+  <div class="container-lg px-3 pt-3 help-nav">
+    <ul class="nav nav-tabs container-lg help-nav__list">
+      <li class="nav-item help-nav__list-item help-nav__list-item--home">
+        <a class="nav-link help-nav__link help-nav__link--home @(ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index" ? "active" : "")" asp-area="Help" asp-controller="Home" asp-action="Index" asp-route-topic="" asp-route-category="">Home</a>
+      </li>
+      <li class="nav-item help-nav__list-item help-nav__list-item--tutorials">
+        <a class="nav-link help-nav__link help-nav__link--tutorials text-underline-none @(ViewContext.RouteData.Values["controller"].ToString() == "Tutorial" ? "active" : "")" asp-area="Help" asp-controller="Tutorial" asp-action="Index" asp-route-id="1">Tutorial</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 @RenderBody()
+
+@section Scripts {
+    <script>
+        window.addEventListener('load', function() {
+            let helpLink = document.getElementById('helpLink');
+            if (helpLink) {
+                helpLink.classList.add('active');
+            }
+        });
+    </script>
+}

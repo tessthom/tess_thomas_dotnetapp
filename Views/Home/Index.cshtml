@@ -8,7 +8,7 @@
     </div>
 }
 
-<div id="myCarousel" class="carousel slide container-lg px-0" data-bs-ride="true">
+<div id="myCarousel" class="carousel slide container-lg px-0 mb-5" data-bs-ride="true">
     <div class="carousel-indicators">
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -53,28 +53,34 @@
     </button>
 </div>
 
-<div class="container-lg py-5 px-2 px-lg-0 px-sm-4">
+<div class="container-lg py-5">
     @* cols of text below carousel *@
     <div class="row home">
-        <div class="col-12 mb-5 home__col--one">
-            <img src="/images/roadmap-cropped-on-right.jpg" alt="FIRST COL IMAGE HERE" class="img-fluid float-sm-end half-pill-round-left">
-            <h3 class="fw-medium fs-2 mb-4">Configuring Middleware for an HTTP Request Pipeline</h3>
-            <p>
-                The MapControllerRoute() method sets the app's default controller and action. We can pass the arguments <code>name: "default", pattern: "{controller=Home}/{action=Index}/{id?}"</code> so that when the app starts, it calls the Index() action method of the Home controller.
+        <div class="col-12 mb-5 px-4 home__col--one">
+            <img src="/images/roadmap-cropped-on-right.jpg" alt="FIRST COL IMAGE HERE" class="img-fluid w-50 float-sm-end pill pill--round-left">
+            <h3 class="fw-medium fs-2 mt-1 mb-4 pill__copy--h3">Configuring Middleware for an HTTP Request Pipeline</h3>
+            <p class="pill__copy--p">
+                Each middleware component performs a task in the pipeline, executed in the order they're added. The first component receives the request and the last sends the response.
+            </p>
+            <p class="pill__copy--p">
+                By default the MVC template checks the environment and adds appropriate components first, then the routing middleware, which maps URLs to controller actions. The <code>MapControllerRoute()</code> method sets the app's default action to call the Home controller's <code>Index()</code> action, for example. Then endpoint middleware, which runs the action to generate a response.
             </p>
         </div>
-        <div class="col-12 mb-5 home__col--two">
-            <img src="/images/typing-400-square.jpg" alt="SECOND COL IMAGE HERE" class="img-fluid float-sm-start half-pill-round-right">
-            <h3 class="fw-medium fs-2 text-end text-lg-start mb-4">URL Best Practice</h3>
-            <p>
-                URLs specify the interface for an app. They should be easy to read, easy to type, and easy to remember. Well designed URLs are good SEO and more likely to be bookmarked by users. Keep them as short as possible while still being descriptive, use keywords to describe page content, and try to create an intuitive hierarchy. 
+        <div class="col-12 mb-5 px-4 home__col--two">
+            <img src="/images/typing-400-square.jpg" alt="SECOND COL IMAGE HERE" class="img-fluid w-50 float-sm-start pill pill--round-right">
+            <h3 class="fw-medium fs-2 text-end text-lg-start mt-1 mb-4 pill__copy--h3">URL Best Practices</h3>
+            <p class="pill__copy--p">
+                URLs specify the interface for an app. They should be easy to read, easy to type, and easy to remember. Well designed URLs are good SEO and more likely to be bookmarked by users. Keep them concise while still being descriptive, use keywords to describe page content, and try to create an intuitive hierarchy. 
+            </p>
+            <p class="pill__copy--p">
+                An ideal URL is all descriptive strings, but sometimes a numeric ID is necessary for database interaction. If this is the case, be sure to pair the ID with a descriptive string. For example, <code>/products/1</code> is better than <code>/products?id=1</code>.
             </p>
         </div>
-        <div class="col-12">
-            <img src="/images/wires-400-square.jpg" alt="SECOND COL IMAGE HERE" class="img-fluid float-sm-end half-pill-round-left">
-            <h3 class="fw-medium fs-2 mb-4">Binding Model Properties to HTML Elements</h3>
-            <p>
-                The <code>asp-for</code> tag helper is typically used with forms to bind model properties to HTML elements in Razor views. It specifies the model property for the HTML element. The tag helper generates the <code>name</code> and <code>id</code> attributes of the HTML element. The <code>name</code> attribute is used to bind the element to a model property. The <code>id</code> attribute is used to associate the element with a <code>&lt;label&gt;</code> element. 
+        <div class="col-12 px-4 home__col--three">
+            <img src="/images/wires-400-square.jpg" alt="SECOND COL IMAGE HERE" class="img-fluid w-50 float-sm-end pill pill--round-left">
+            <h3 class="fw-medium fs-2 mt-1 mb-4 pill__copy--h3">Binding Model Properties to HTML Elements</h3>
+            <p class="pill__copy--p">
+                The <code>asp-for</code> tag helper is typically used with forms to bind model properties to HTML elements in Razor views. It specifies the model property for the HTML element. The tag helper generates the <code>name</code> and <code>id</code> attributes of the HTML element. The <code>name</code> attribute is used to bind the element to a model property. The <code>id</code> attribute is used to associate the element with a <code>&lt;label&gt;</code> element. In the model, the property must have a public setter and getter in order to be bound.
             </p>
         </div>
     </div>

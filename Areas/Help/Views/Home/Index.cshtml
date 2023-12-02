@@ -1,10 +1,44 @@
-<div class="container-lg">
-    <p>This is the help home page content</p>
-    
-    @* MAKE SURE SEARCH FUNCTIONAL *@
-    <p>PUT SEARCH BAR IN FAQ SIDEBAR, MAKE FUNCTIONAL</p>
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" aria-label="search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+<div class="container px-3">
+    <div class="container help-home p-3">
+        <div class="row mw-100 m-auto border border-primary">
+            <div class="col-12 col-md-7 p-0">
+                <h2>Quick Tips Section</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, consequatur! Incidunt laboriosam, iusto quod cum molestiae ullam at sit quaerat in magnam voluptatem minus. Ipsum dolorum ad aliquam! Necessitatibus, libero!</p>
+            </div>
+            
+            @* Sidebar *@
+            <aside class="col-12 col-md-5 p-3">
+                <h2 class="text-center">WEB-180 FAQs</h2>
+                <div class="search-container">
+                    <input type="text" id="autocomplete" placeholder="Your question here..." class="w-100">
+                    <ul id="results"></ul>
+                </div>
+                <details>
+                    <summary>Question 1</summary>
+                    <p>Answer 1</p>
+                </details>
+                <details>
+                    <summary>Question 1</summary>
+                    <p>Answer 1</p>
+                </details>
+                <details>
+                    <summary>Question 1</summary>
+                    <p>Answer 1</p>
+                </details>
+                <details>
+                    <summary>Question 1</summary>
+                    <p>Answer 1</p>
+                </details>
+                <details>
+                    <summary>Question 1</summary>
+                    <p>Answer 1</p>
+                </details>
+            </aside>
+        </div>
+    </div>
 </div>
+
+@* <form class="d-flex" role="search">
+                    <input class="form-control me-2" id="search" type="search" aria-label="search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form> *@

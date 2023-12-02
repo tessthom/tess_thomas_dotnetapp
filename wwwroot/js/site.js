@@ -3,4 +3,3 @@
 
 // Write your JavaScript code.
 
-// Event handler for Satisfaction radio buttons

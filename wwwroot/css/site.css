@@ -67,7 +67,6 @@ hr {
 
 /* Visual indicator for active nav links */
 .navbar-nav .active > .nav-link {
-  /* font-weight: bold; */
   border-bottom: 2px solid #212529;
 }
 /* Remove x padding from nav links because it makes the bottom border underline effect too wide */
@@ -83,6 +82,63 @@ hr {
 /* Remove padding from right side of last nav item */
 .navbar-expand-sm .navbar-nav .nav-item:last-child {
   padding-right: 0;
+}
+
+/* Help Area Secondary Nav Tabs */
+.help-nav {
+  background-color: var(--dark-blue);
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+}
+.nav-tabs {
+  border-bottom: none;
+}
+.nav-tabs .nav-link {
+  border: none;
+  padding-bottom: .75rem;
+}
+.nav-tabs > li > a, .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
+  color: var(--white);
+  font-size: 1.25rem;
+  border: none;
+}
+
+/* Help Home Page */
+.help-home {
+  border-left: 2px solid var(--dark-blue);
+  border-right: 2px solid var(--dark-blue);
+  border-bottom: 2px solid var(--dark-blue);
+  border-bottom-left-radius: .5em;
+  border-bottom-right-radius: .5em;
+}
+
+/* Help Home Page FAQ */
+aside {
+  background-color: var(--dark-blue);
+}
+aside h2 {
+  color: var(--white);
+}
+summary {
+  padding: 0.5em;
+  font-size: 1.25rem;
+  color: var(--white);
+  cursor: pointer;
+  /* list-style-type: none; */
+}
+details {
+  display: block;
+  padding: 0.5em;
+  padding-left: 0;
+  /* border-top: 2px solid var(--white); */
+  border-bottom: 2px solid var(--white);
+}
+details:last-of-type {
+  border-bottom: none;
+}
+details p {
+  padding-left: 0.5em;
+  color: var(--white);
 }
 
 /* About Timeline */
@@ -232,13 +288,13 @@ input[type="radio"]:checked + .emoji {
 }
 
 /* Half pill shapes */
-.half-pill-round-left {
+.pill--round-left {
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
   shape-outside: circle(50%);
   margin-left: 2em;
 }
-.half-pill-round-right {
+.pill--round-right {
   border-top-right-radius: 999px;
   border-bottom-right-radius: 999px;
   shape-outside: circle(50%);
@@ -256,10 +312,15 @@ footer .btn-outline-secondary:hover {
   background-color: rgba(110, 118, 125, 0.2);
 }
 @media (min-width: 962px) {
-  .half-pill-round-left {
-    margin-left: 4em;
+  .pill--round-left {
+    margin-left: 3em;
+    max-width: 45%;
   }
-  .half-pill-round-right {
-    margin-right: 4em;
+  .pill--round-right {
+    margin-right: 3em;
+    max-width: 45%;
+  }
+  .pill__copy--p {
+    line-height: 1.65;
   }
 }
