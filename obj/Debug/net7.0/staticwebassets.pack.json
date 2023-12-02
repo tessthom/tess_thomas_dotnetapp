@@ -45,6 +45,14 @@
       "PackagePath": "staticwebassets/images/laptop-600.jpg"
     },
     {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/roadmap-520.jpg",
+      "PackagePath": "staticwebassets/images/roadmap-520.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/roadmap-cropped-on-right.jpg",
+      "PackagePath": "staticwebassets/images/roadmap-cropped-on-right.jpg"
+    },
+    {
       "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/scaffolding-1000.jpg",
       "PackagePath": "staticwebassets/images/scaffolding-1000.jpg"
     },
@@ -55,6 +63,30 @@
     {
       "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/scaffolding-600.jpg",
       "PackagePath": "staticwebassets/images/scaffolding-600.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/tt-thin-draft-black.png",
+      "PackagePath": "staticwebassets/images/tt-thin-draft-black.png"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/tt-thin-primary-mixed.png",
+      "PackagePath": "staticwebassets/images/tt-thin-primary-mixed.png"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/tt-thin-primary.png",
+      "PackagePath": "staticwebassets/images/tt-thin-primary.png"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/tt-thin-secondary.png",
+      "PackagePath": "staticwebassets/images/tt-thin-secondary.png"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/typing-400-square.jpg",
+      "PackagePath": "staticwebassets/images/typing-400-square.jpg"
+    },
+    {
+      "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/images/wires-400-square.jpg",
+      "PackagePath": "staticwebassets/images/wires-400-square.jpg"
     },
     {
       "Id": "/Users/tessthomas/Desktop/WEB180asp/repos/tess_thomas_dotnetapp/wwwroot/js/site.js",

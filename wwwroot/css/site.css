@@ -1,24 +1,57 @@
+/* COLORS */
+:root {
+  /* make variables for colors */
+  --black: #212529;
+  --gray: #3A3E41;
+  --light-gray: #B3B8BC;
+  --white: #F8F9FA;
+  --dark-blue: #245165;
+  --blue: #4379BA;
+  --green: #65BA74;
+  --yellow: #F9C74F;
+  --orange: #EF8A37;
+  --red: #E23B3E;
+  --purple: #935392;
+}
+
 html {
   font-size: 14px;
 }
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+.btn-primary {
+  background-color: var(--black);
+  border-color: var(--black);
 }
-
+.btn-primary:hover {
+  background-color: var(--gray);
+}
+.btn-secondary {
+  background-color: #fff;
+  color: var(--black);
+  border: 2px solid var(--black);
+}
+.btn-secondary:hover {
+  background-color: var(--light-gray);
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem var(--black);
+}
 html {
   position: relative;
   min-height: 100%;
 }
-
 body {
   margin-bottom: 60px;
+}
+p {
+  font-size: 1.15rem;
+}
+hr {
+  margin: 0;
 }
 
 /* Reset containers to remove horizontal padding and max-widths */
@@ -32,14 +65,10 @@ body {
   padding-right: 0;
 }
 
-img {
-  object-fit: cover;
-}
-
 /* Visual indicator for active nav links */
 .navbar-nav .active > .nav-link {
   /* font-weight: bold; */
-  border-bottom: 2px solid rgb(33,37,41);
+  border-bottom: 2px solid #212529;
 }
 /* Remove x padding from nav links because it makes the bottom border underline effect too wide */
 .navbar-expand-sm .navbar-nav .nav-link {
@@ -54,4 +83,183 @@ img {
 /* Remove padding from right side of last nav item */
 .navbar-expand-sm .navbar-nav .nav-item:last-child {
   padding-right: 0;
+}
+
+/* About Timeline */
+.circle {
+  color: var(--blue);
+  background-color: #fff;
+  z-index: 2;
+}
+.circle i {
+  font-size: 3em;
+}
+.timeline hr {
+  color: var(--blue);
+  opacity: 1;
+}
+.connecting-line.row .col-2 {
+  position: relative;
+  align-self: stretch;
+}
+.connecting-line.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 2px solid var(--light-gray);
+  z-index: 1;
+}
+.connecting-line.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.connecting-line.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 2px);
+}
+.connecting-line.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
+}
+.timeline div {
+  padding: 0;
+  height: 40px;
+}
+.timeline hr {
+  border-top: 2px solid var(--light-gray);
+  margin: 0;
+  top: 18px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 2px solid var(--light-gray);
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 2px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 2px);
+}
+
+/* Contact Form custom styles */
+.emoji-container {
+  display: flex;
+  justify-content: start;
+}
+.emoji {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="radio"]:checked + .emoji {
+  border-radius: 50%;
+  border-color: var(--black);
+}
+
+/* Contact emoji colors */
+.purple {
+  color: var(--purple);
+}
+.blue {
+  color: var(--blue);
+}
+.green {
+  color: var(--green);
+}
+.yellow {
+  color: var(--yellow);
+}
+.orange {
+  color: var(--orange);
+}
+.red {
+  color: var(--red);
+}
+
+/* Contact data col */
+.contact-col__item a {
+  text-decoration: underline 2px var(--green);
+  text-underline-offset: .4em;
+}
+.contact-col__item a:hover {
+  text-decoration: underline 3px var(--green);
+}
+.contact-col__item--email a {
+  text-decoration: underline 2px var(--red);
+}
+.contact-col__item--email a:hover {
+  text-decoration: underline 3px var(--red);
+}
+.contact-col__item--phone a {
+  text-decoration: underline 2px var(--orange);
+}
+.contact-col__item--phone a:hover {
+  text-decoration: underline 3px var(--orange);
+}
+.contact-col__item:last-of-type a {
+  text-decoration: underline 2px var(--blue);
+}
+.contact-col__item:last-of-type a:hover {
+  text-decoration: underline 3px var(--blue);
+}
+
+/* Contact map */
+.responsive-iframe {
+  width: 100%;
+}
+
+/* Half pill shapes */
+.half-pill-round-left {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  shape-outside: circle(50%);
+  margin-left: 2em;
+}
+.half-pill-round-right {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  shape-outside: circle(50%);
+  margin-right: 2em;
+}
+footer .btn-outline-secondary {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+footer .btn-outline-secondary span {
+  color: #6c757d;
+  padding-left: 0.25em;
+}
+footer .btn-outline-secondary:hover {
+  background-color: rgba(110, 118, 125, 0.2);
+}
+@media (min-width: 962px) {
+  .half-pill-round-left {
+    margin-left: 4em;
+  }
+  .half-pill-round-right {
+    margin-right: 4em;
+  }
 }

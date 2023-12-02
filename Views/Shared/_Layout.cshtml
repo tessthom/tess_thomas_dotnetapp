@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/tess_thomas_dotnetapp.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/4110f8cff3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <nav class="sticky-top navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow px-3 py-3">
-        <div class="container-fluid d-flex justify-content-between">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Tess Thomas</a>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow px-3 py-3 shadow-none border-bottom-0">
+        <div class="container-lg d-flex justify-content-between px-lg-0">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" role="link" aria-label="Home" aria-labeledby="logo-label">
+                <img src="/images/tt-thin-primary-mixed.png" width="64px" alt="Logo" class="me-2">
+                <span>Tess Thomas</span id="logo-label">
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -42,16 +46,35 @@
         @RenderSection("Header", required: true)
     </header>
 
-    <div class="container-fluid">
-        <main role="main" class="pb-3">
+    <div class="container-fluid pb-5">
+        <main role="main" class="pb-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted px-3 py-3">
-        <div class="container-fluid">
-            &copy; @DateTime.Now.Year Tess Thomas
-            @* &copy; 2023 - tess_thomas_dotnetapp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+    <footer class="footer">
+        <div class="container-lg border-top px-4 px-lg-0 text-muted py-4 d-flex flex-wrap justify-content-between align-items-center">
+            @* <div class="col-md-4 d-flex align-items-center"> *@
+                <div class="col">
+                    <a href="#" role="link" aria-label="Home" class="me-4 mb-3 mb-md-0 text-decoration-none lh-1">
+                        <img src="/images/tt-thin-secondary.png" width="64px" alt="Logo">
+                    </a>
+                </div>
+                <div class="col-md text-align-center flex-grow-0"><span class="mb-3 mb-md-0 text-body-secondary">Tess Thomas &copy; @DateTime.Now.Year</span></div>
+                @* &copy; 2023 - tess_thomas_dotnetapp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
+            @* </div> *@
+            <ul class="nav col justify-content-end list-unstyled d-flex">
+                <li class="ms-3">
+                    <a href="" class="text-body-secondary text-decoration-none btn btn-outline-secondary">
+                        <span class="">LinkedIn</span>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a href="" class="text-body-secondary text-decoration-none btn btn-outline-secondary">
+                        <span class="">GitHub</span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

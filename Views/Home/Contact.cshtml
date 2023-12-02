@@ -1,11 +1,186 @@
 @{
     ViewData["Title"] = "Contact";
+    var contactData = (Dictionary<string, string>)Model;
 }
 
 @section Header {
-    <h1 class="display-4">Contact</h1>
+    <div class="container-lg px-4 px-lg-0 py-4 text-center">
+        <h1 class="display-4">Contact</h1>
+    </div>
 }
 
-<div class="text-center">
-    <p>I'm a paragraph tag from the Contact.cshtml file inside a div with a class of .text-center</p>
+<hr class="mx-4 mb-4">
+
+<div class="container-lg px-4 px-lg-0">
+    <div class="row mb-2 g-5">
+        <div class="col-md-7 col-lg-8 contact contact-col">
+            <h2 class="mb-3">Submit WEB 180 Feedback</h2>
+            @* Form to collect course feedback *@
+            <form asp-action="SubmitForm" method="post">
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">First name</label>
+                        <input type="text" class="form-control mb-3" id="firstName" name="firstName" placeholder="Dot">
+                        @if (!string.IsNullOrEmpty(TempData["FirstNameError"] as string))
+                        {
+                            <span class="text-danger">@TempData["FirstNameError"]</span>
+                        }
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input type="text" class="form-control mb-3" id="lastName" name="lastName" placeholder="Net">
+                        @if (!string.IsNullOrEmpty(TempData["LastNameError"] as string))
+                        {
+                            <span class="text-danger">@TempData["LastNameError"]</span>
+                        }
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control mb-3" id="email" name="email" placeholder="dnet@waketech.edu">
+                        @if (!string.IsNullOrEmpty(TempData["EmailError"] as string))
+                        {
+                            <span class="text-danger">@TempData["EmailError"]</span>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="os" class="form-label">OS used</label><br>
+                        <select name="os" id="os" class="form-select w-100 mb-3">
+                            <option value="microsoft">Microsoft Windows</option>
+                            <option value="apple">Apple macOS</option>
+                            <option value="linux">Linux</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="program" class="form-label">Software used</label><br>
+                        <select name="program" id="program" class="form-select w-100 mb-3">
+                            <option value="visualstudio">Visual Studio</option>
+                            <option value="visualstudiomac">Visual Studio for Mac</option>
+                            <option value="vscode">Visual Studio Code</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12">
+                        <label for="message" class="form-label">Comment</label>
+                        <textarea class="form-control mb-3" id="message" rows="3" placeholder="This stuff was tough to wrap my head around at first, but learning about MVC has turned out to be..."></textarea>
+                        @if (!string.IsNullOrEmpty(TempData["MessageError"] as string))
+                        {
+                            <span class="text-danger">@TempData["MessageError"]</span>
+                        }
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12">
+                        <label class="form-label">Overall Satisfaction</label><br>
+                        <div class="emoji-container border border-secondary-subtle p-2 d-flex gap-2 mb-3">
+                            <input type="radio" id="veryHappy" name="satisfaction" value="veryHappy" hidden>
+                            <label for="veryHappy" class="emoji purple"><i class="fa-solid fa-face-grin-hearts fa-2xl"></i></label>
+                            <input type="radio" id="happy" name="satisfaction" value="happy" hidden>
+                            <label for="happy" class="emoji blue"><i class="fa-solid fa-face-smile-beam fa-2xl"></i></label>
+                            <input type="radio" id="neutral" name="satisfaction" value="neutral" hidden>
+                            <label for="neutral" class="emoji green"><i class="fa-solid fa-face-meh fa-2xl"></i></label>
+                            <input type="radio" id="sad" name="satisfaction" value="sad" hidden>
+                            <label for="sad" class="emoji yellow"><i class="fa-solid fa-face-frown fa-2xl"></i></label>
+                            <input type="radio" id="verySad" name="satisfaction" value="verySad" hidden>
+                            <label for="verySad" class="emoji orange"><i class="fa-solid fa-face-sad-tear fa-2xl"></i></label>
+                            <input type="radio" id="deceased" name="satisfaction" value="deceased" hidden>
+                            <label for="deceased" class="emoji red"><i class="fa-solid fa-face-dizzy fa-2xl"></i></label>
+                            <span class="emoji-choice fs-italic"></span>
+                        </div>
+                        @if (!string.IsNullOrEmpty(TempData["satisfactionError"] as string))
+                        {
+                            <span class="text-danger">@TempData["satisfactionError"]</span>
+                        }
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Submit</button>
+            </form>
+            <hr class="my-4">
+        </div>
+
+        <div class="col-md-5 col-lg-4 contact contact-col">
+            <h2 class="mb-3">Get in Touch</h2>
+            @* Get contact data from Home Controller *@
+            @foreach (var item in contactData)
+            {
+                // Check key values to place items in correct tags
+                if (item.Key == "Phone")
+                {
+                    @:<p class="contact-col__item contact-col__item--phone"><a href="tel:@item.Value" class="link-dark">@item.Value</a></p>
+                }
+                else if (item.Key == "Email") 
+                {
+                    @:<p class="contact-col__item contact-col__item--email"><a href="mailto:@item.Value" class="link-dark">@item.Value</a></p>
+                }
+                else if (item.Value.StartsWith("http"))
+                {
+                    var uri = new Uri(item.Value);
+                    var displayUrl = uri.Host + uri.PathAndQuery;
+                    @:<p class="contact-col__item contact-col__item--url"><a href="@item.Value" class="link-dark" target="_blank">@displayUrl</a></p>
+                }
+                else
+                {
+                    @:<p class="contact-col__item lead">@item.Value</p>
+                }
+            }
+            <hr class="my-4">
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12 col-lg-8 pe-lg-3">
+            @* Display a map of the location *@
+            <h2 class="mb-3">Visit Wake Tech</h2>
+            <div class="map w-100">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3233.835259781565!2d-78.8431036240285!3d35.85304287253221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89acee205a0ad9a3%3A0x12679263f9dfb169!2sWake%20Technical%20Community%20College%20-%20RTP%20Campus!5e0!3m2!1sen!2sus!4v1701462244070!5m2!1sen!2sus" width="800" height="600" class="responsive-iframe" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        function updateEmojiCaption() {
+            const radios = document.getElementsByName("satisfaction");
+            for (let i = 0; i < radios.length; i++) {
+                radios[i].addEventListener("change", function () {
+                    const selectedEmojiLabel = this.nextElementSibling;
+                    let caption;
+                    switch (this.value) {
+                        case 'veryHappy':
+                            caption = 'Loved it! .NET is life!';
+                            break;
+                        case 'happy':
+                            caption = 'Not too shabby!';
+                            break;
+                        case 'neutral':
+                            caption = 'Eh, it was fine';
+                            break;
+                        case 'sad':
+                            caption = 'Oof, not great y\'all';
+                            break;
+                        case 'verySad':
+                            caption = 'NGL I\'m lightly traumatized';
+                            break;
+                        case 'deceased':
+                            caption = '.NET has rendered me deceased';
+                            break;
+                        default:
+                            caption = '';
+                    }
+                    const emojiChoiceSpan = document.querySelector('.emoji-choice');
+                    if (emojiChoiceSpan) {
+                        emojiChoiceSpan.innerHTML = caption;
+                    }
+                })
+            }
+        }
+        window.onload = updateEmojiCaption;
+    </script>
+}

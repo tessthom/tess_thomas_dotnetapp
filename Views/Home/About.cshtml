@@ -3,9 +3,114 @@
 }
 
 @section Header {
-    <h1 class="display-4">About</h1>
+    <div class="container-lg px-4 px-lg-0 pt-4 text-center">
+        <h1 class="display-4">About ASP.NET Core MVC</h1>
+    </div>
 }
 
-<div class="text-center">
-    <p>I'm a paragraph tag from the About.cshtml file inside a div with a class of .text-center</p>
+<div class="container">
+    <h2 class="py-4 text-center mb-5 display-5">A Timeline of Development</h2>
+    @* First Section *@
+    <div class="row align-items-center connecting-line d-flex">
+        <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+            <div class="circle font-weight-bold"><i class="fa fa-circle-check fa-2xl"></i></div>
+        </div>
+        <div class="col-6">
+            <h3>.NET Framework</h3>
+            <p>Released in 2002, the .NET Framework introduced ASP.NET Web Forms, which was created for developers coming from Classic Active Server Pages and Windows Forms. While the former were used to writing HTML, the latter were used to click-and-drag UI development. Thus, Web Forms combined and abstracted elements of both, and was successful because it was event driven and feature-rich, but approachable. </p>
+        </div>
+    </div>
+    @* Path Line *@
+    <div class="row timeline">
+        <div class="col-2">
+            <div class="corner top-right"></div>
+        </div>
+        <div class="col-8">
+            <hr>
+        </div>
+        <div class="col-2">
+            <div class="corner left-bottom"></div>
+        </div>
+    </div>
+    @* Second Section *@
+    <div class="row align-items-center justify-content-end connecting-line d-flex">
+        <div class="col-6 text-end">
+            <h3>ASP.NET MVC</h3>
+            <p>As programming models began to favor modularity and Web Forms developers evolved to want more control over their markup, the need for a new framework became evident. In 2009, Microsoft released ASP.NET MVC, based on the Model-View-Controller pattern which lives and dies by separation of concerns. It was easier to update and its MVC pattern allowed more direct control over HTML.</p>
+        </div>
+        <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+            <div class="circle font-weight-bold"><i class="fa fa-circle-check fa-2xl"></i></div>
+        </div>
+    </div>
+    @* Path Line *@
+    <div class="row timeline">
+        <div class="col-2">
+            <div class="corner right-bottom"></div>
+        </div>
+        <div class="col-8">
+            <hr>
+        </div>
+        <div class="col-2">
+            <div class="corner top-left"></div>
+        </div>
+    </div>
+    @* Third Section *@
+    <div class="row align-items-center connecting-line d-flex">
+        <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+            <div class="circle font-weight-bold"><i class="fa fa-circle-check fa-2xl"></i></div>
+        </div>
+        <div class="col-6">
+            <h3>.NET Core</h3>
+            <p>In 2016 Microsoft released a cross-platform, high-performance modular framework which was a complete and total re-write of ASP.NET. It was modular, lightweight, and included the initial release of ASP.NET Core MVC. In 2017, .NET Core 2.0 introduced Razor Pages - a new, page-based programming model that's simpler and more lightweight than MVC for certain scenarios.</p>
+        </div>
+    </div>
+    @* Path Line *@
+    <div class="row timeline">
+        <div class="col-2">
+            <div class="corner top-right"></div>
+        </div>
+        <div class="col-8">
+            <hr>
+        </div>
+        <div class="col-2">
+            <div class="corner left-bottom"></div>
+        </div>
+    </div>
+    @* Fourth Section *@
+    <div class="row align-items-center justify-content-end connecting-line d-flex">
+        <div class="col-6 text-end">
+            <h3>.NET 5.0</h3>
+            <p>In 2020 Microsoft released a unified .NET platform which offered continued support for ASP.NET Core MVC, and combined .NET Core and .NET Framework, without "Core" in the name. It focused on improving performance and introduced new C# language features.</p>
+        </div>
+        <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+            <div class="circle font-weight-bold"><i class="fa fa-circle-check fa-2xl"></i></div>
+        </div>
+    </div>
+    @* Path Line *@
+    <div class="row timeline">
+        <div class="col-2">
+            <div class="corner right-bottom"></div>
+        </div>
+        <div class="col-8">
+            <hr>
+        </div>
+        <div class="col-2">
+            <div class="corner top-left"></div>
+        </div>
+    </div>
+    @* Fifth Section *@
+    <div class="row align-items-center connecting-line d-flex">
+        <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+            <div class="circle font-weight-bold"><i class="fa fa-circle-check fa-2xl"></i></div>
+        </div>
+        <div class="col-6">
+            <h3>.NET 6.0</h3>
+            <p>Building upon the unification and enhancements of 5.0, .NET 6.0 further refined the combined platform, offering new APIs and tools for developers like Hot Reload and .NET Watch. It's expected to have long term support, making it a reliable choice for applications that require stability in maintenance.</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <h2 class="py-4 text-center my-5 display-5">Notable Contributors</h2>
 </div>

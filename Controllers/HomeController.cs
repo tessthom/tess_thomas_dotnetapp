@@ -30,7 +30,43 @@ public class HomeController : Controller
 
     public IActionResult Contact()
     {
-        return View();
+        // My contact data
+        var contactData = new Dictionary<string, string>
+        {
+            { "Name", "Tess Thomas"},
+            { "Creds", "Full-Stack Web Developer" },
+            { "Email", "abthomas3@my.waketech.edu" },
+            { "Phone", "843-555-5555" },
+            { "LinkedIn", "https://www.linkedin.com/in/tess-thomas-dev/" },
+            { "GitHub", "https://github.com/tessthom" }
+        };
+
+        // Pass the data to the view
+        return View(contactData);
+    }
+
+    [HttpPost]
+    public IActionResult SubmitForm(string name, string email, string message)
+    {
+        if (string.IsNullOrEmpty(name))
+        {
+            TempData["NameError"] = "Name is required.";
+        }
+        if (string.IsNullOrEmpty(email))
+        {
+            TempData["EmailError"] = "Email is required.";
+        }
+        if (string.IsNullOrEmpty(message)) 
+        {
+            TempData["MessageError"] = "Comment is required.";
+        }
+
+        if (ViewData["NameError"] == null && ViewData["EmailError"] == null && ViewData["MessageError"] == null)
+        {
+            TempData["SuccessMessage"] = "Thank you for your feedback!";
+        }
+
+        return RedirectToAction("Contact");
     }
 
     // Should not need these actions for the app
