@@ -12,9 +12,9 @@ public class HomeController : Controller
     }
 
     // Attribute based routing
-    [Route("topic/{topic}/category/{category}")] // Matches /topic/anything/category/anything
-    [Route("category/{category}")] // Matches /category/anything
-    [Route("topic/{topic}")] // Matches /topic/anything
+    //[Route("topic/{topic}/category/{category}")] // Matches /topic/anything/category/anything
+    //[Route("category/{category}")] // Matches /category/anything
+    //[Route("topic/{topic}")] // Matches /topic/anything
     [Route("")] // This is the default route
     public IActionResult Index(string? topic = null, string? category = null)
     {
@@ -23,11 +23,13 @@ public class HomeController : Controller
         return View();
     }
 
+    [Route("About")]
     public IActionResult About()
     {
         return View();
     }
 
+    [Route("Contact")]
     public IActionResult Contact()
     {
         // My contact data

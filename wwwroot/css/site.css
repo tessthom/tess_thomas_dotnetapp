@@ -53,6 +53,19 @@ p {
 hr {
   margin: 0;
 }
+.code-block {
+  border: 1px solid var(--light-gray);
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+pre {
+  font-size: .875em;
+  color: #D63384;
+  word-wrap: break-word;
+}
+.restrict-height {
+  height: fit-content;
+}
 
 /* Reset containers to remove horizontal padding and max-widths */
 .container {
@@ -84,9 +97,25 @@ hr {
   padding-right: 0;
 }
 
+.carousel-item {
+  max-height: 600px;
+  color: #fff;
+}
+.carousel-caption h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.carousel-item a.btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+
 /* Help Area Secondary Nav Tabs */
 .help-nav {
-  background-color: var(--dark-blue);
+  background-color: var(--black);
   border-top-left-radius: .5em;
   border-top-right-radius: .5em;
 }
@@ -105,16 +134,22 @@ hr {
 
 /* Help Home Page */
 .help-home {
-  border-left: 2px solid var(--dark-blue);
-  border-right: 2px solid var(--dark-blue);
-  border-bottom: 2px solid var(--dark-blue);
+  border-left: 2px solid var(--black);
+  border-right: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
   border-bottom-left-radius: .5em;
   border-bottom-right-radius: .5em;
+}
+.prev, .next {
+  background-color: var(--gray);
+}
+.prev:hover, .next:hover {
+  opacity: 0.8;
 }
 
 /* Help Home Page FAQ */
 aside {
-  background-color: var(--dark-blue);
+  background-color: var(--blue);
 }
 aside h2 {
   color: var(--white);
@@ -300,10 +335,10 @@ input[type="radio"]:checked + .emoji {
 .contact-col__item--phone a:hover {
   text-decoration: underline 3px var(--orange);
 }
-.contact-col__item:last-of-type a {
+.contact-col__item:last-of-type a, a.contributors {
   text-decoration: underline 2px var(--blue);
 }
-.contact-col__item:last-of-type a:hover {
+.contact-col__item:last-of-type a:hover, a.contributors:hover {
   text-decoration: underline 3px var(--blue);
 }
 

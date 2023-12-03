@@ -1,8 +1,31 @@
 @model int
 
-<h2>Tutorial - Page @Model</h2>
+<div class="container px-3">
+  <div class="container help-home p-3 p-md-5">
+    <h2>Tutorial @Model: How to Debug an ASP.NET Core App in VS Code</h2>
+    
+    <p>Debugging is a crucial part of development. The following is a brief guide on how to debug in the context of Visual Studio Code. (As a MacOS user it's how I develop .NET apps, given that Microsoft is no longer supporting Visual Studio for Mac.)</p>
 
-<p>tutorial 1 content</p>
+    <ol>
+      <li><b>Set a Breakpoint:</b> Locate a line immediately after a potentially problematic line of code and click on the left margin to set a breakpoint. A red dot will appear, and this line is where the debugger will pause execution, and you can inspect the state of your program. You want to choose a line immediately after a problematic line because that is the point at which values will be assigned to variables.
+      </li>
 
-<a asp-asp-controller="Tutorial" asp-action="PrevTutorial" asp-route-id="@Model" class="btn btn-primary">Prev</a>
-<a asp-asp-controller="Tutorial" asp-action="NextTutorial" asp-route-id="@Model" class="btn btn-primary">Next</a>
+      <li><b>Start Debugging:</b> Click on the <var>Run</var> icon in the Activity bar, then click "<var>Start Debugging</var>", or press <kbd class="bg-secondary">F5</kbd>.</li>
+
+      <li><b>Inspect Variables:</b> The debugger will pause execution at any breakpoints, at which point you can hover your mouse over variables to see their current values. You can also see a list of all local variables in the "<var>Variables</var>" section of the Run view. </li>
+
+      <li><b>Step Through Code:</b> Use the "<var>Step Over</var>" button (or press <kbd class="bg-secondary">F10</kbd>) to execute the next line of code, "<var>Step Into</var>" (or <kbd class="bg-secondary">F11</kbd>) to move <em>into</em> a function that's being called, and "<var>Step Out</var>" (or <kbd class="bg-secondary">Shift</kbd> + <kbd class="bg-secondary">F11</kbd>) to back out of the current function.</li>
+
+      <li><b>Modify Variables:</b> You can change the value of variables while debugging to see how the changes might affect behavior. In the "<var>Variables</var>" section, click on the value of a variable you want to change, type the new value, and press <kbd class="bg-secondary">Enter</kbd>.</li>
+
+      <li><b>Continue Execution:</b> To continue executing the program after you're done inspecting variables, click the "<var>Continue</var>" button in the debug toolbar. Execution will resume and you can see output from the app in the Debug Console.</li>
+
+      <li><b>Console.log:</b> Speaking of the Debug Console, a tried and true method of debugging nearly any app is to insert <code>Console.log(&lt;variableOrExpression&gt;)</code> in any places in your code where it would be helpful to check on the current value of variables or expressions.</li>
+    </ol>
+    
+    <div class="container d-flex justify-content-between">
+      <a asp-asp-controller="Tutorial" asp-action="PrevTutorial" asp-route-id="@Model" class="btn btn-primary prev">Prev</a>
+      <a asp-asp-controller="Tutorial" asp-action="NextTutorial" asp-route-id="@Model" class="btn btn-primary next">Next</a>
+    </div>
+  </div>
+</div>

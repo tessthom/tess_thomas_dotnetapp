@@ -3,19 +3,21 @@ using Microsoft.AspNetCore.Mvc;
 [Area("Help")]
 public class HomeController : Controller
 {
+
+    [Route("Help/topic/{topic}/category/{category}")] // Matches /topic/anything/category/anything
+    [Route("Help/category/{category}")] // Matches /category/anything
+    [Route("Help/topic/{topic}")] // Matches /topic/anything
+    [Route("Help")] // This is the default route
     public IActionResult Index(string? topic = null, string? category = null)
     {
-        // Get all FAQs from FaqData.cs
-        //var faqs = FaqData.AllFaqs;
-
-        // Store FAQs in ViewData
-        //ViewData["faqs"] = faqs;
+        
 
         return View();
     }
 
-    public IActionResult Tutorial()
-    {
-        return View();
-    }
+    // [Route("Help/Tutorial/{id?}")]
+    // public IActionResult Tutorial(int id = 1)
+    // {
+    //     return View();
+    // }
 }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 [Area("Help")]
 public class TutorialController : Controller
 {
+  [Route("Help/Tutorial/{id?}")]
   public IActionResult Index(int id)
   {
     switch (id)

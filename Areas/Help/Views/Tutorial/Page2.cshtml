@@ -1,8 +1,58 @@
 @model int
 
-<h2>Tutorial - Page @Model</h2>
+<div class="container px-3">
+  <div class="container help-home p-3 p-md-5">
+    <h2>Tutorial @Model: How to Set Up a Basic .NET App</h2>
 
-<p>tutorial 2 content</p>
+    <p>
+      The following is a guide for setting up a basic .NET app in Visual Studio Code. This tutorial assumes you have already installed Visual Studio Code and the .NET Core SDK.
+    </p>
 
-<a asp-asp-controller="Tutorial" asp-action="PrevTutorial" asp-route-id="@Model" class="btn btn-primary">Prev</a>
-<a asp-asp-controller="Tutorial" asp-action="NextTutorial" asp-route-id="@Model" class="btn btn-primary">Next</a>
+    <ol>
+      <li>
+        <b>Install Prerequisites:</b>
+        Make sure you have VS Code and .NET Core SDK installed on your mac. You can download them at the following links: 
+          <p class="mb-0 ms-2"><a class="text-decoration-none" href="https://code.visualstudio.com/download" target="_blank">VS Code</a></p>
+          <p class="mb-0 ms-2"><a class="text-decoration-none" href="https://dotnet.microsoft.com/download" target="_blank">.NET Core SDK</a></p>
+      </li>
+      <li>
+        <b>Open VS Code:</b>
+        Start VS Code and use the <var>File</var> menu to open a new window.
+      </li>
+      <li>
+        <b>Create a New Folder:</b>
+        Create a new folder for your project. You can do this by clicking the <var>File</var> menu and selecting <var>New Folder</var>, or by cd'ing into your directory from the <var>Terminal</var> and running the command <code>mkdir myAppName</code>. Name the folder whatever you want.
+      </li>
+      <li>
+        <b>Open the New Folder:</b>
+        Using the <var>File</var> menu, open the folder you just created.
+      </li>
+      <li>
+        <b>Open the Terminal:</b>
+        If it's not already open, open the <var>Terminal</var> by clicking the <var>Terminal</var> menu and selecting <var>New Terminal</var>, or press <kbd class="bg-secondary">Ctrl</kbd> + <kbd class="bg-secondary">`</kbd>.
+      </li>
+      <li>
+        <b>Create a New .NET Project:</b>
+        To create a new Core MVC project, run the command <code>dotnet new mvc</code> in the <var>Terminal</var>. This will create a new .NET project, including all the files and folders you need to get started.
+      </li>
+      <li>
+        <b>Build the App:</b>
+        To build the app, run the command <code>dotnet build</code> in the <var>Terminal</var>. This will build the app and create a <var>bin</var> folder in your project directory.
+      </li>
+      <li>
+        <b>Run the App:</b>
+        To run the app, run the command <code>dotnet run</code> in the <var>Terminal</var>. This will start the app and open it in your browser. You can also run a "hot reload" version of the app that automatically updates when you make changes to the code by running the command <code>dotnet watch run</code>. Running this command will automatically open the app in your browser. You can also manually type in the URL <code>localhost:5000</code> (check the port number specified in the Terminal output created by the last command) to open the app in your browser yourself, if using the <code>dotnet run</code> command. Note that if you don't use the hot reload option, in order to see the results of any changes to your code, you'll have to stop the server and restart it by running the <code>dotnet run</code> command again, each time.
+      </li>
+      <li>
+        <b>Stop the App:</b>
+        When you're done with your development session, be sure to stop the app by pressing <kbd class="bg-secondary">Ctrl</kbd> + <kbd class="bg-secondary">C</kbd> in the <var>Terminal</var>. This will stop the app from running in the background.
+        </b>
+      </li>
+    </ol>
+
+    <div class="container d-flex justify-content-between">
+      <a asp-asp-controller="Tutorial" asp-action="PrevTutorial" asp-route-id="@Model" class="btn btn-primary prev">Prev</a>
+      <a asp-asp-controller="Tutorial" asp-action="NextTutorial" asp-route-id="@Model" class="btn btn-primary next">Next</a>
+    </div>
+  </div>
+</div>

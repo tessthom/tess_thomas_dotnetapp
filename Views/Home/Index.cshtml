@@ -21,7 +21,7 @@
         </div>
       <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0">
             <h2 class="display-4 fw-bold mb-4">Learn how to set up a .NET app</h2>
-            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-4" href="#" role="button">Tutorials</a>
+            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-5 fs-5" asp-area="Help" asp-controller="Tutorial" asp-action="Index" role="button">Tutorials</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -30,7 +30,7 @@
         </div>
         <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0"">
             <h2 class="display-4 fw-bold mb-4">Give feedback about the class</h2>
-            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-4" href="#" role="button">Contact</a>
+            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-5 fs-5" href="/Contact" role="button">Contact</a>
         </div>
     </div>
     <div class="carousel-item">
@@ -39,7 +39,7 @@
         </div>
         <div class="carousel-caption d-flex flex-column justify-content-center h-100" style="top: 0"">
             <h2 class="display-4 fw-bold mb-4">Browse common questions about the construction of Core MVC apps</h2>
-            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-4" href="#" role="button">FAQs</a>
+            <a class="btn btn-primary ms-auto me-auto mt-2 py-2 px-5 fs-5" href="/Help" role="button">FAQs</a>
         </div>
     </div>
   </div>
@@ -56,7 +56,7 @@
 <div class="container-lg py-5">
     @* cols of text below carousel *@
     <div class="row home">
-        <div class="col-12 mb-5 px-4 home__col--one">
+        <div class="col-12 mb-5 px-4 px-lg-0 home__col--one">
             <img src="/images/roadmap-cropped-on-right.jpg" alt="FIRST COL IMAGE HERE" class="img-fluid w-50 float-sm-end pill pill--round-left">
             <h3 class="fw-medium fs-2 mt-1 mb-4 pill__copy--h3">Configuring Middleware for an HTTP Request Pipeline</h3>
             <p class="pill__copy--p">
@@ -66,7 +66,7 @@
                 By default the MVC template checks the environment and adds appropriate components first, then the routing middleware, which maps URLs to controller actions. The <code>MapControllerRoute()</code> method sets the app's default action to call the Home controller's <code>Index()</code> action, for example. Then endpoint middleware, which runs the action to generate a response.
             </p>
         </div>
-        <div class="col-12 mb-5 px-4 home__col--two">
+        <div class="col-12 mb-5 px-4 px-lg-0 home__col--two">
             <img src="/images/typing-400-square.jpg" alt="SECOND COL IMAGE HERE" class="img-fluid w-50 float-sm-start pill pill--round-right">
             <h3 class="fw-medium fs-2 text-end text-lg-start mt-1 mb-4 pill__copy--h3">URL Best Practices</h3>
             <p class="pill__copy--p">
@@ -76,7 +76,7 @@
                 An ideal URL is all descriptive strings, but sometimes a numeric ID is necessary for database interaction. If this is the case, be sure to pair the ID with a descriptive string. For example, <code>/products/1</code> is better than <code>/products?id=1</code>.
             </p>
         </div>
-        <div class="col-12 px-4 home__col--three">
+        <div class="col-12 px-4 px-lg-0 home__col--three">
             <img src="/images/wires-400-square.jpg" alt="SECOND COL IMAGE HERE" class="img-fluid w-50 float-sm-end pill pill--round-left">
             <h3 class="fw-medium fs-2 mt-1 mb-4 pill__copy--h3">Binding Model Properties to HTML Elements</h3>
             <p class="pill__copy--p">

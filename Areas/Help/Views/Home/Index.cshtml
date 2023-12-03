@@ -1,73 +1,160 @@
 <div class="container px-3">
     <div class="container help-home p-3">
-        <div class="row mw-100 m-auto border border-primary">
-            <div class="col-12 col-md-7 p-0">
-                <h2>Quick Tips Section</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, consequatur! Incidunt laboriosam, iusto quod cum molestiae ullam at sit quaerat in magnam voluptatem minus. Ipsum dolorum ad aliquam! Necessitatibus, libero!</p>
+        <div class="row mw-100 m-auto gx-5">
+            <div class="col-12 col-md-7 py-0 ps-0 pe-3">
+                <h2>Quick Tips</h2>
+                <div class="container">
+                    <div class="tip">
+                        <h3>How to Work with Partial Views</h3>
+                        <p>Partial views are helpful for content that's used more than once in an app or in multiple apps. They can contain HTML, Razor code or a combo of the two. They're excellent for "componentizing" your code.</p>
+
+                        <p>To create a partial view in Visual Studio, right click on the parent directory and click <samp>Add</samp> -> <samp>View</samp> to open the Add View window. Use the Razor View template to spec the view name, being sure to select "Create as a partial view".</p>
+
+                        <p>Because MVC treats a partial view like a part of the view it's added to, the partial view can use the model object of the parent view, or the model can be specified.</p>
+
+                        <h4>Example of a partial view:</h4>
+
+<div class="container code-block">
+<pre>
+    <code>
+    <span class="text-body">// The partial view</span>
+    &#64;model Book
+    &lt;a asp-action="Details" asp-controller="Book"
+        asp-route-id="&#64;Model.BookId"
+        asp-route-slug="&#64;Model.Slug&#40;&#41;"&gt;
+        &#64;Model.Title
+    &lt;/a&gt;
+    </code>
+</pre>
+</div>
+
+<div class="container code-block">
+<pre>
+    <code>
+    <span class="text-body">// The view included in a parent view with the same model object</span>
+    &#64;model Book
+    ...
+    &lt;h5&gt;
+        &lt;partial name="_BookLinkPartial" /&gt;
+    &lt;/h5&gt;
+    ...
+    </code>
+</pre>
+</div>
+
+<div class="container code-block">
+<pre>
+    <code>
+    <span class="text-body">// The view included in a parent view with a different model object</span>
+    &#64;model Book
+    ...
+    &lt;h5&gt;
+        &lt;partial name="_BookLinkPartial" model="&#64;book" /&gt;
+    &lt;/h5&gt;
+    ...
+    </code>
+</pre>
+</div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="container">
+                    <div class="tip">
+                        <h3>How to Implement Forms Authentication in MVC</h3>
+                        <p>Authentication is the process of identifying and verifying that a user is who they say they are, in order to determine if they should be allowed access to a resource. There are 3 types of authentication:</p>
+
+                        <ul>
+                        <li>Windows Authentication</li>
+                        <li>Individual User Account Authentication</li>
+                        <li>Third Party Services Authentication</li>
+                        </ul>
+
+                        <p>Windows Authentication is the default authentication mechanism for ASP.NET applications. It uses the current Windows user credentials to authenticate against the Active Directory. This is the most secure authentication mechanism, but it's only really suitable for local settings like a company's intranet.</p>
+
+                        <p>Individual user account Authentication is the most common authentication mechanism for public-facing apps. It uses a username and password to authenticate against a database. It's the most flexible authentication mechanism, but it's also the most complex to implement.</p>
+
+                        <p>Third party services like Google, Facebook, Twitter, etc. have become available as a way to authenticate users. It's the least flexible authentication mechanism, but it's also the easiest to implement.</p>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="container">
+                    <div class="tip">
+                        <h3>Razor Syntax Rules</h3>
+                        <p>The following are the main syntax rules for writing Razor code:</p>
+
+                        <ul>
+                        <li>Razor code blocks get enclosed in <code>&#64;{...}</code></li>
+                        <li>Inline expressions such as variables or functions are prepended with <code>&#64;</code></li>
+                        <li>Statements end in a semicolon</li>
+                        <li>Strings are enclosed in quotation marks</li>
+                        <li>C# is case sensitive</li>
+                        <li>C#files have the extension <code>.cshtml</code></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             
             @* Sidebar *@
-            <aside class="col-12 col-md-5 p-3">
+            <aside class="col-12 col-md-5 p-3 restrict-height mt-1">
                 <h2 class="text-center">WEB-180 FAQs</h2>
                 <div class="search-container">
-                    <input type="text" id="autocomplete" placeholder="Your question here..." class="w-100">
+                    <input type="text" id="autocomplete" placeholder="Your question here..." class="w-100 mt-3">
                     <ul id="results"></ul>
                     <div id="selectedDetails"></div>
                 </div>
                 <details>
-                    <summary>Question 1 autocomplete working</summary>
-                    <p>Answer 1</p>
+                    <summary>What is MVC?</summary>
+                    <p>Model-View-Controller is a software architectural pattern that's been around in some form since the 1970's and is all about separation of concerns. It breaks an app's internal representation of information into 3 interconnected parts: the data (Model), the user interface (View), and the logic (Controller).
+                    </p>
                 </details>
                 <details>
-                    <summary>Question 2</summary>
-                    <p>Answer 2</p>
+                    <summary>What does each part of MVC do?</summary>
+                    <p>The Model is considered the "business layer", and is the part of the app that handles data. Typically, model objects get and store data from a database. The View is the "display layer" and typically contains the HTML that gets rendered on the screen, which is often created from the model data. The Controller is the "input control" and handles user interaction. It can be thought of as the middle-man between the Model, View and the client.</p>
                 </details>
                 <details>
-                    <summary>Question 3</summary>
-                    <p>Answer 3</p>
+                    <summary>What is ASP.NET Core?</summary>
+                    <p>An open-source counterpart to ASP.NET that offers a platform-independent ability to develop complex applications.</p>
                 </details>
                 <details>
-                    <summary>Question 4</summary>
-                    <p>Answer 4</p>
+                    <summary>Why is ASP.NET Core any better than classic ASP.NET?</summary>
+                    <p>ASP.NET Core offers a more modern project template with improved development experience, capabilities, enhanced performance, and greater flexibility. It's cross platform, supports more languages than the classic, and doesn't require re-compiling after code change.</p>
                 </details>
                 <details>
-                    <summary>Question 5</summary>
-                    <p>Answer 5</p>
+                    <summary>What is routing in MVC?</summary>
+                    <p>Routing describes the mechanisms that process the incoming URL requests and map them to the desired response. It's how MVC decides which controller and action to execute for a given URL and can be one of two types - convention-based or attribute-based.
+                    </p>
                 </details>
-            </aside>
+                <details>
+                    <summary>What's the difference between the two types of routing?</summary>
+                    <p>Routing can be <em>convention-based</em> or <em>attribute-based</em>. Convention-based routing is the default and uses a set of rules to map incoming URLs to controllers and actions. To define it, <code>MapRoute()</code> is called and passed the route's unique name, URL pattern and default values. Attribute-based routing allows you to define the routes directly on the controller and action methods using attributes. It's more flexible than convention-based routing and can be used to define routes for Web API controllers. To define it, the <code>Route</code> attribute is defined in the action method of the controller.
+                    </p>
+                </details>
+                <details>
+                    <summary>How is data passed between controllers and views?</summary>
+                    <p>In MVC you can pass data in three different ways - using <code>ViewData</code>, <code>ViewBag</code>, or <code>TempData</code>. <code>ViewData</code> is a dictionary object derived from the <code>ViewDataDictionary</code> class and is accessible using strings as keys. <code>ViewBag</code> is a dynamic property derived from <code>ViewData</code> and is also accessible using strings as keys. Unlike <code>ViewData</code>, it doesn't require typecsating for complex data types. <code>TempData</code> is a dictionary object from the <code>TempDataDictionary</code> class that's used to pass data from the current request to the next request. It's generally used to store temporary data like error messages.
+                    </p>
+                </details>
+                <details>
+                    <summary>What are tag helpers in MVC?</summary>
+                    <p>
+                        Tag helpers are used to modify HTML elements in Razor views. They're denoted by the <code>asp-</code> prefix and are used to generate standard HTML tags dynamically.
+                    </p>
+                </details>
+                <details>
+                    <summary>What are Areas in MVC?</summary>
+                    <p>A feature since ASP.NET MVC 2.0, Areas are a way to divy a large MVC app up into smaller groupings with related functionality. They allow developers to organize models, views and controllers into separate sections like "Admin", "Blog", "Store", etc. Each area is registered in the <code>AreaRegistration</code> class and is defined by a route that's registered in the <code>RegisterArea()</code> method. Areas are typically used to separate the admin section of an app from the rest of the app.
+                    </p>
+                </details>
+            </aside>`
         </div>
     </div>
 </div>
 
 @section IndexScripts {
-    @* <script>
-        // Get all the question elements and put them in an array
-        const summaries = Array.from(document.querySelectorAll('question')).map(question => question.textContent);
-        console.log(summaries);
-
-        // Get the search input and the results list
-        const search = document.getElementById('autocomplete');
-        const resultsList = document.getElementById('results');
-
-        // When user types in search input, filter summaries array and display the results
-        search.oninput = function() {
-            // filter will hold the filtered array
-            const filter = search.value.toLowerCase();
-            // clear the results list
-            resultsList.innerHTML = '';
-            // add the filtered summaries to the results list
-            if (filter) {
-                const suggestions = summaries.filter(question => question.toLowerCase().includes(filter));
-                const limitedSuggestions = suggestions.slice(0, 3);
-
-                limitedSuggestions.forEach(suggestion => {
-                    const li = document.createElement('li');
-                    li.textContent = suggestion;
-                    resultsList.appendChild(li);
-                });
-            }
-        };
-    </script> *@
     <script>
         // Store the details elements and their summaries in an array of objects
         const detailsArray = Array.from(document.querySelectorAll('details')).map(details => {
@@ -85,19 +172,23 @@
         const resultsList = document.getElementById('results');
         const selectedDetailsDiv = document.getElementById('selectedDetails');
 
+        // Add input event listener to search input - show results as user types
         search.oninput = function() {
             const filter = search.value.toLowerCase();
             resultsList.innerHTML = '';
 
+            // Filter out summaries that dont match search input
             if (filter) {
                 const suggestions = summaries.filter(question => question.toLowerCase().includes(filter));
-                const limitedSuggestions = suggestions.slice(0, 3);
+                const limitedSuggestions = suggestions.slice(0, 3); // Limit suggestions to 3
 
+                // Show selected FAQ below search input
                 limitedSuggestions.forEach(suggestion => {
                     const li = document.createElement('li');
                     li.textContent = suggestion;
                     resultsList.appendChild(li);
 
+                    // Add click event listener to each suggestion
                     li.addEventListener('click', function() {
                         search.value = this.textContent;
                         resultsList.innerHTML = '';
@@ -107,9 +198,9 @@
                         // Get the details object with the same index
                         const details = detailsArray[index];
 
-                        // Render the question and answer text in the selectedDetailsDiv
+                        // Show selected FAQ below search input
                         selectedDetailsDiv.innerHTML = `<h3 class="search-result__question">${details.question}</h3><p class="search-result__answer">${details.answer}</p>`;
-                        selectedDetailsDiv.style.display = 'block'; // Make the div visible
+                        selectedDetailsDiv.style.display = 'block'; // Make div visible
                     });
                 });
             }
