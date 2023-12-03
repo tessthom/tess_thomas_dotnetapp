@@ -6,10 +6,10 @@ public class HomeController : Controller
     public IActionResult Index(string? topic = null, string? category = null)
     {
         // Get all FAQs from FaqData.cs
-        var faqs = FaqData.AllFaqs;
+        //var faqs = FaqData.AllFaqs;
 
         // Store FAQs in ViewData
-        ViewData["faqs"] = faqs;
+        //ViewData["faqs"] = faqs;
 
         return View();
     }

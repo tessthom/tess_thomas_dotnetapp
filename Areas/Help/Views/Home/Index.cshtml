@@ -12,33 +12,107 @@
                 <div class="search-container">
                     <input type="text" id="autocomplete" placeholder="Your question here..." class="w-100">
                     <ul id="results"></ul>
+                    <div id="selectedDetails"></div>
                 </div>
                 <details>
-                    <summary>Question 1</summary>
+                    <summary>Question 1 autocomplete working</summary>
                     <p>Answer 1</p>
                 </details>
                 <details>
-                    <summary>Question 1</summary>
-                    <p>Answer 1</p>
+                    <summary>Question 2</summary>
+                    <p>Answer 2</p>
                 </details>
                 <details>
-                    <summary>Question 1</summary>
-                    <p>Answer 1</p>
+                    <summary>Question 3</summary>
+                    <p>Answer 3</p>
                 </details>
                 <details>
-                    <summary>Question 1</summary>
-                    <p>Answer 1</p>
+                    <summary>Question 4</summary>
+                    <p>Answer 4</p>
                 </details>
                 <details>
-                    <summary>Question 1</summary>
-                    <p>Answer 1</p>
+                    <summary>Question 5</summary>
+                    <p>Answer 5</p>
                 </details>
             </aside>
         </div>
     </div>
 </div>
 
-@* <form class="d-flex" role="search">
-                    <input class="form-control me-2" id="search" type="search" aria-label="search">
-                    <button class="btn btn-success" type="submit">Search</button>
-                </form> *@
+@section IndexScripts {
+    @* <script>
+        // Get all the question elements and put them in an array
+        const summaries = Array.from(document.querySelectorAll('question')).map(question => question.textContent);
+        console.log(summaries);
+
+        // Get the search input and the results list
+        const search = document.getElementById('autocomplete');
+        const resultsList = document.getElementById('results');
+
+        // When user types in search input, filter summaries array and display the results
+        search.oninput = function() {
+            // filter will hold the filtered array
+            const filter = search.value.toLowerCase();
+            // clear the results list
+            resultsList.innerHTML = '';
+            // add the filtered summaries to the results list
+            if (filter) {
+                const suggestions = summaries.filter(question => question.toLowerCase().includes(filter));
+                const limitedSuggestions = suggestions.slice(0, 3);
+
+                limitedSuggestions.forEach(suggestion => {
+                    const li = document.createElement('li');
+                    li.textContent = suggestion;
+                    resultsList.appendChild(li);
+                });
+            }
+        };
+    </script> *@
+    <script>
+        // Store the details elements and their summaries in an array of objects
+        const detailsArray = Array.from(document.querySelectorAll('details')).map(details => {
+            return {
+                question: details.querySelector('summary').textContent,
+                answer: details.querySelector('p').textContent,
+                element: details
+            };
+        });
+
+        // Get the summaries from the detailsArray
+        const summaries = detailsArray.map(details => details.question);
+
+        const search = document.getElementById('autocomplete');
+        const resultsList = document.getElementById('results');
+        const selectedDetailsDiv = document.getElementById('selectedDetails');
+
+        search.oninput = function() {
+            const filter = search.value.toLowerCase();
+            resultsList.innerHTML = '';
+
+            if (filter) {
+                const suggestions = summaries.filter(question => question.toLowerCase().includes(filter));
+                const limitedSuggestions = suggestions.slice(0, 3);
+
+                limitedSuggestions.forEach(suggestion => {
+                    const li = document.createElement('li');
+                    li.textContent = suggestion;
+                    resultsList.appendChild(li);
+
+                    li.addEventListener('click', function() {
+                        search.value = this.textContent;
+                        resultsList.innerHTML = '';
+
+                        // Get the index of the selected question
+                        const index = summaries.indexOf(this.textContent);
+                        // Get the details object with the same index
+                        const details = detailsArray[index];
+
+                        // Render the question and answer text in the selectedDetailsDiv
+                        selectedDetailsDiv.innerHTML = `<h3 class="search-result__question">${details.question}</h3><p class="search-result__answer">${details.answer}</p>`;
+                        selectedDetailsDiv.style.display = 'block'; // Make the div visible
+                    });
+                });
+            }
+        };
+    </script>
+}

@@ -130,7 +130,6 @@ details {
   display: block;
   padding: 0.5em;
   padding-left: 0;
-  /* border-top: 2px solid var(--white); */
   border-bottom: 2px solid var(--white);
 }
 details:last-of-type {
@@ -139,6 +138,32 @@ details:last-of-type {
 details p {
   padding-left: 0.5em;
   color: var(--white);
+}
+
+/* FAQ Search Autocomplete */
+#results {
+  padding-left: 0;
+  background-color: var(--white);
+  color: var(--black);
+  list-style-type: none;
+}
+#results li {
+  padding: 0.5em;
+  border-bottom: 1px solid var(--light-gray);
+}
+#results li:last-of-type {
+  border-bottom: none;
+}
+#results li:hover {
+  background-color: var(--light-gray);
+}
+.search-result__question {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+.search-result__answer {
+  color: var(--white);
+  font-size: 1.25rem;
 }
 
 /* About Timeline */
